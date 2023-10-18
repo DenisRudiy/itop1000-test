@@ -1,0 +1,220 @@
+@import "src/styles.scss";
+
+.main {
+  background-color: var(--bg-component-color);
+  margin: 0px;
+  padding: 0px;
+  width: 25vw;
+  min-width: 410px;
+  border-radius: 0px 0px 25px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+
+  .val {
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    .val_container {
+      padding: 50px;
+      .val_info {
+        border-radius: 15px;
+        border: none;
+        outline: none;
+        background-color: rgba(46, 54, 91, 0.3);
+        display: flex;
+        align-items: center;
+        transition: 0.3s all;
+        cursor: pointer;
+        font-family: "Rubik", sans-serif;
+        img {
+          width: 65px;
+          height: 65px;
+          pointer-events: none;
+        }
+        .val_details {
+          text-align: start;
+          padding-left: 15px;
+          pointer-events: none;
+          h2 {
+            padding: 0;
+            margin: 0;
+            font-weight: 300;
+            color: white;
+          }
+          p {
+            color: var(--bg-text-hover-color);
+            font-weight: 300;
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+          }
+        }
+        .arrow {
+          pointer-events: none;
+          width: 20px;
+          height: 20px;
+          margin-left: 15px;
+        }
+      }
+      .val_info:hover {
+        background: rgba($color: #171b2e, $alpha: 0.4);
+      }
+
+      .overlay {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        background: rgba($color: #171b2e, $alpha: 0.4);
+        border-radius: 0px 0px 15px 15px;
+
+        button {
+          background-color: transparent;
+          display: flex;
+          outline: none;
+          border: none;
+          color: white;
+          cursor: pointer;
+          font-family: "Rubik", sans-serif;
+          transition: 0.3s all;
+          border-radius: 0px 0px 15px 15px;
+          img {
+            width: 65px;
+            height: 65px;
+          }
+          h2 {
+            font-weight: 300;
+          }
+        }
+        button:hover {
+          background: rgba($color: #171b2e, $alpha: 0.7);
+        }
+        button:active {
+          transform: translateY(10px);
+        }
+      }
+      .val_input {
+        padding-top: 30px;
+        .VInput {
+          width: 100%;
+          height: 80px;
+          font-size: 46px;
+          font-weight: 300;
+          border: 2px solid transparent;
+          outline: none;
+          background-color: rgba($color: #171b2e, $alpha: 0.3);
+          border-radius: 15px;
+          color: white;
+          transition: 0.3s all;
+          font-family: "Rubik", sans-serif;
+        }
+        .VInput:focus {
+          border: 2px solid rgba($color: #171b2e, $alpha: 0.4);
+          box-shadow: rgba(36, 24, 108, 0.15) 0px 48px 100px 0px;
+        }
+      }
+    }
+
+    .space {
+      margin: 0px 50px 0px 50px;
+      height: 1px;
+      opacity: 0.4;
+      background-color: white;
+    }
+  }
+}
+.switch {
+  width: 100%;
+  height: 150px;
+  margin-top: -40px;
+  padding-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px 0px 15px 15px;
+  background-color: var(--bg-btn-color);
+  z-index: 1;
+  button {
+    width: 100%;
+    height: 150px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    border: none;
+    color: white;
+    font-family: "Rubik", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s all;
+    img {
+      width: 35px;
+      height: 35px;
+    }
+  }
+  button:hover {
+    box-shadow: rgba(36, 24, 108, 0.15) 0px 48px 100px 0px;
+    font-size: 17px;
+  }
+  button:active {
+    transform: translateY(15px);
+  }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 500px) {
+  .main {
+    min-width: 300px;
+    .val {
+      .val_container {
+        .val_info {
+          img {
+            width: 45px;
+            height: 45px;
+          }
+          .val_details {
+            padding-left: 5px;
+            h2 {
+              font-size: 14px;
+            }
+            p {
+              color: var(--bg-text-hover-color);
+              font-weight: 300;
+              font-size: 12px;
+              margin: 0;
+              padding: 0;
+            }
+          }
+          .arrow {
+            margin-left: 5px;
+          }
+        }
+        .overlay {
+          button {
+            display: flex;
+            align-items: center;
+            img {
+              width: 45px;
+              height: 45px;
+            }
+            h2 {
+              font-size: 16px;
+              font-weight: 300;
+            }
+          }
+        }
+        .val_input {
+          .VInput {
+            width: 100%;
+            height: 70px;
+            font-size: 32px;
+          }
+        }
+      }
+    }
+  }
+}

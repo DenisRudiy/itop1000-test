@@ -1,0 +1,95 @@
+<div class="main">
+  <div class="val">
+    <div class="val_container">
+      <button class="val_info" (click)="showTop()" id="btnTop">
+        <img src="{{ curTop.img }}" alt="" />
+        <div class="val_details">
+          <h2>{{ curTop.f_name }}</h2>
+          <p>
+            1 {{ curTop.name }} - {{ currentConverter.t }}
+            {{ curLow.name }}
+          </p>
+        </div>
+        <img
+          src="https://i.postimg.cc/25PD24kb/icons8-arrow-down-60.png"
+          alt=""
+          class="arrow"
+        />
+      </button>
+      <div class="overlay" *ngIf="showT">
+        <button (click)="changeCurrency(0, 'T')">
+          <img src="{{ currencies[0].img }}" alt="" />
+          <h2>{{ currencies[0].f_name }}</h2>
+        </button>
+        <button (click)="changeCurrency(1, 'T')">
+          <img src="{{ currencies[1].img }}" alt="" />
+          <h2>{{ currencies[1].f_name }}</h2>
+        </button>
+        <button (click)="changeCurrency(2, 'T')">
+          <img src="{{ currencies[2].img }}" alt="" />
+          <h2>{{ currencies[2].f_name }}</h2>
+        </button>
+      </div>
+      <div class="val_input">
+        <input
+          type="number"
+          class="VInput"
+          placeholder="Type value..."
+          [(ngModel)]="inputValueTop"
+          (ngModelChange)="onInputChange($event, 'T')"
+        />
+      </div>
+    </div>
+
+    <div class="space"></div>
+
+    <div class="val_container">
+      <button class="val_info" (click)="showLow()" id="btnLow">
+        <img src="{{ curLow.img }}" alt="" />
+        <div class="val_details">
+          <h2>{{ curLow.f_name }}</h2>
+          <p>
+            1 {{ curLow.name }} - {{ currentConverter.l }}
+            {{ curTop.name }}
+          </p>
+        </div>
+        <img
+          src="https://i.postimg.cc/25PD24kb/icons8-arrow-down-60.png"
+          alt=""
+          class="arrow"
+        />
+      </button>
+      <div class="overlay" *ngIf="showL">
+        <button (click)="changeCurrency(0, 'L')">
+          <img src="{{ currencies[0].img }}" alt="" />
+          <h2>{{ currencies[0].f_name }}</h2>
+        </button>
+        <button (click)="changeCurrency(1, 'L')">
+          <img src="{{ currencies[1].img }}" alt="" />
+          <h2>{{ currencies[1].f_name }}</h2>
+        </button>
+        <button (click)="changeCurrency(2, 'L')">
+          <img src="{{ currencies[2].img }}" alt="" />
+          <h2>{{ currencies[2].f_name }}</h2>
+        </button>
+      </div>
+      <div class="val_input">
+        <input
+          type="number"
+          class="VInput"
+          placeholder="Type value..."
+          [(ngModel)]="inputValueLow"
+          (ngModelChange)="onInputChange($event, 'L')"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="switch">
+  <button (click)="switchCurrencies()">
+    <img
+      src="https://i.postimg.cc/ncyhhj91/icons8-sorting-arrows-96.png"
+      alt=""
+    />Switch Currencies
+  </button>
+</div>

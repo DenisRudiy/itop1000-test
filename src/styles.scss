@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  --bg_main_color: #171b2e;
+  --bg-component-color: #3d477a;
+  --bg-addict-color: #44508c;
+  --bg-text-color: #676c8a;
+  --bg-text-hover-color: #93959d;
+  --bg-btn-color: #505fa6;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg_main_color);
+  color: white;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  font-family: "Rubik", sans-serif;
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
